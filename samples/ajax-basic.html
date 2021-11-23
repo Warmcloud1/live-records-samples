@@ -24,13 +24,13 @@
 		// 透過網址取得伺服器端提供的 JSON 格式資料
 		fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
 			return response.json();
-		}).then(function(data){
+		}).then(function(alldata_test){
 			// 先清空畫面
 			list.innerHTML="";
 			// 根據取得的資料，將產品的訊息顯示出來
 			let product;
-			for(let i=0;i<data.length;i++){
-				product=data[i];
+			for(let i=0;i<alldata_test.length;i++){
+				product=alldata_test[i];
 				list.innerHTML+=product.name.bold()+" - "+product.price+"<br/>"+product.description+"<hr/>";
 			}
 		});
